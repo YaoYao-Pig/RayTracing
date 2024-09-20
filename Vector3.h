@@ -122,7 +122,7 @@ namespace yyz
 
     inline float Vector3::dot(const Vector3 &v)const
     {
-        return this->x() * v.x() + this->x() * v.x() + this->x() * v.x();
+        return this->x() * v.x() + this->y() * v.y() + this->z() * v.z();
     }
 
     inline Vector3 Vector3::cross(const Vector3 &v)const
