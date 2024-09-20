@@ -27,7 +27,7 @@ Vector3 randomInUnitSphere(){
     do{
         float r[3];
         for(int i=0;i<3;++i){
-            srand(time(NULL));
+            
             r[i]=rand()%(RANDOM_N+1)/(float(RANDOM_N+1));
         }
         p=2.0*Vector3(r[0],r[1],r[2])-Vector3(1,1,1);
@@ -58,7 +58,8 @@ int main(){
     int nx=200;
     int ny=100;
     int ns=100;//抗锯齿采样次数
-        
+    srand(time(NULL));
+
     Camera camera(Position3(0,0,0),Vector3(4.0,0.0,0.0),Vector3(0.0,2.0,0.0),Position3(-2.0,-1.0,-1.0));
 
     cout<<"P3\n"<<nx<<" "<<ny<<"\n255\n";
@@ -84,10 +85,10 @@ int main(){
             //反走样,增加采样次数；
             //在一个像素点的范围内，发射更多不同方向的Ray，然后再把这些不同方向的Ray的Color取平均
             for(int s=0;s<ns;s++){
-                srand(time(NULL));
+                //srand(time(NULL));
                 float tmp=rand()%(RANDOM_N+1)/(float(RANDOM_N+1));
                 float u=float(i+tmp)/float(nx);
-                srand(time(NULL));
+                //srand(time(NULL));
                 tmp=rand()%(RANDOM_N+1)/(float(RANDOM_N+1));
                 float v=float(j+tmp)/float(ny);
                 //发射Ray
