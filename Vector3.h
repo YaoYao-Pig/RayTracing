@@ -8,6 +8,8 @@
 namespace yyz
 {
 
+
+
     class Vector3
     {
     public:
@@ -132,6 +134,14 @@ namespace yyz
 
     //非成员函数实现：
 
+    inline Vector3 operator*(float s,const Vector3 &v){
+        return Vector3(v*s);
+    }
+
+
+    using Position3=Vector3;
+    using Direction3=Vector3;
+    using Color3=Vector3;
 
 }
 
