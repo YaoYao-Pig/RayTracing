@@ -28,7 +28,6 @@ g++ Ray.o Utils.o Material.o Camera.o HitableList.o Shape.o main.o -o main.exe
 
 
 
-int num=0;
 Color3 getColor(const yyz::Ray& r,Hitable* world,int depth){
     hitRecord hitRecord;
     bool isHit=world->hit(r,0.001,MAXFLOAT,hitRecord);
@@ -58,7 +57,7 @@ Color3 getColor(const yyz::Ray& r,Hitable* world,int depth){
 int main(){
     int nx=200;
     int ny=100;
-    int ns=50;//抗锯齿采样次数
+    int ns=100;//抗锯齿采样次数
     srand(time(NULL));
 
     Camera camera(Position3(0,0,0),Vector3(4.0,0.0,0.0),Vector3(0.0,2.0,0.0),Position3(-2.0,-1.0,-1.0));
@@ -74,8 +73,8 @@ int main(){
     vector<Hitable*> list;
     list.push_back(new Sphere(Position3(0,0,-1),0.5,new Lambertian(Vector3(0.8,0.3,0.3))));
     list.push_back(new Sphere(Position3(0,-100.5,-1),100,new Lambertian(Vector3(0.8,0.8,0.0))));
-    list.push_back(new Sphere(Position3(1,0,-1),0.5,new Metal(Vector3(0.8,0.6,0.2),0.3f)));
-    //list.push_back(new Sphere(Position3(-1,0,-1),0.5,new Glass(1.5)));
+    list.push_back(new Sphere(Position3(1,0,-1),0.5,new Metal(Vector3(0.8,0.6,0.2),0.0f)));
+    list.push_back(new Sphere(Position3(-1,0,-1),0.5,new Glass(1.5)));
     list.push_back(new Sphere(Position3(-1,0,-1),-0.45,new Glass(1.5)));
     Hitable* world=new HitableList(list);
 

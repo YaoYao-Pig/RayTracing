@@ -12,7 +12,7 @@ yyz::Vector3 yyz::randomInUnitSphere()
             for (int i = 0; i < 3; ++i)
             {
 
-                r[i] = rand() % (RANDOM_N + 1) / (float(RANDOM_N + 1));
+                r[i] = getRandom0to1();
             }
             p = 2.0 * yyz::Vector3(r[0], r[1], r[2]) - yyz::Vector3(1, 1, 1);
         } while (p.dot(p) >= 1.0);

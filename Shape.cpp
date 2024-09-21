@@ -19,7 +19,15 @@ bool Sphere::hit(const yyz::Ray& r,float t_min,float t_max,hitRecord& rec) const
         if(temp<t_max&&temp>t_min){
             rec.t=temp;
             rec.p=r.pointAtParameter(rec.t);
-            rec.normal=(rec.p-center).normalize();
+            rec.normal=(rec.p-center)/radius;
+            rec.mat_ptr=material;
+            return true;
+        }
+        temp=(-b+sqrt(delta))/(2.0*a);
+        if(temp<t_max&&temp>t_min){
+            rec.t=temp;
+            rec.p=r.pointAtParameter(rec.t);
+            rec.normal=(rec.p-center)/radius;
             rec.mat_ptr=material;
             return true;
         }

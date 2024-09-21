@@ -9,7 +9,7 @@
 
 #define MAXFLOAT 3.402823466e+38F
 
-#define RANDOM_N  999
+#define RANDOM_N  9999
 
 
 

@@ -1,6 +1,6 @@
 #include"Material.h"
 #include"Utils.h"
-
+#include<iostream>
 using namespace yyz;
 
 //输入都是unitVector
@@ -10,7 +10,7 @@ Vector3 reflect(const Vector3& v,const Vector3& n){
 bool refract(const Vector3& v,const Vector3& n, float ni_over_nt,Vector3& refracted){
     Vector3 nv=v.normalize();
     float dt=nv.dot(n);
-    //菲涅尔判别式
+    //判别式
     float discriminant=1.0-pow(ni_over_nt,2)*(1.0-pow(dt,2));
     if(discriminant>0){
         refracted=ni_over_nt*(nv-n*dt)-n*sqrt(discriminant);
@@ -77,10 +77,10 @@ bool Glass::scatter(const Ray& r_in,const hitRecord& record,OUT Vector3& attenua
         reflect_prob=schlick(cosine,ref_idx);
     }
     else{
-        scattered=Ray(record.p,reflected);
         reflect_prob=1.0;
     }
 
+    //std::cout<<"ff"<<ff<<std::endl;
     if(getRandom0to1()<reflect_prob){
         scattered=Ray(record.p,reflected);
     }
