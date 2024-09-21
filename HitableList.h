@@ -7,7 +7,7 @@ namespace yyz{
         public:
             HitableList(){}
             HitableList(std::vector<Hitable *>p):allHitable(p),size(allHitable.size()){}
-            virtual bool hit(const yyz::Ray &r, float t_min, float t_max, hitRecord &rec) const override;
+            virtual bool hit(const yyz::Ray &r, float t_min, float t_max,OUT hitRecord &rec) const override;
 
             std::vector<Hitable*> allHitable;
             int size;

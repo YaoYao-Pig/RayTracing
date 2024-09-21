@@ -42,11 +42,18 @@
         "sstream": "cpp",
         "stdexcept": "cpp",
         "streambuf": "cpp",
-        "typeinfo": "cpp"
+        "typeinfo": "cpp",
+        "functional": "cpp",
+        "iterator": "cpp",
+        "numeric": "cpp",
+        "random": "cpp"
     },
     "C_Cpp.errorSquiggles": "enabled",
     "cSpell.words": [
         "hitable",
-        "HITABLELIST"
-    ]
+        "HITABLELIST",
+        "Lambertian",
+        "schlick"
+    ],
+    "Codegeex.CompletionDelay": 2
 }

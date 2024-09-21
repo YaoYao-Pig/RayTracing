@@ -20,6 +20,7 @@ bool Sphere::hit(const yyz::Ray& r,float t_min,float t_max,hitRecord& rec) const
             rec.t=temp;
             rec.p=r.pointAtParameter(rec.t);
             rec.normal=(rec.p-center).normalize();
+            rec.mat_ptr=material;
             return true;
         }
     }

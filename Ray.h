@@ -6,6 +6,7 @@ namespace yyz
 {
     class Ray{
         public:
+            Ray()=default;
             Ray(const Vector3& _origin, const Vector3& _direction);
             Vector3 getOrigin() const;
             Vector3 getDirection() const;
