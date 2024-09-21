@@ -55,8 +55,8 @@ Color3 getColor(const yyz::Ray& r,Hitable* world,int depth){
 
 
 int main(){
-    int nx=200;
-    int ny=100;
+    int nx=400;
+    int ny=200;
     int ns=100;//抗锯齿采样次数
     srand(time(NULL));
 
