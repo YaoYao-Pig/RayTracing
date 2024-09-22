@@ -5,6 +5,7 @@
 
 #include <math.h>
 #include <vector>
+#include "Header.h"
 namespace yyz
 {
 
@@ -55,11 +56,26 @@ namespace yyz
         float squaredLength() const;
         float makeUnitVector();
         
+        inline static float getRandom0to1(){
+                return rand()%(RANDOM_N+1)/(float(RANDOM_N+1));
+            }
 
+        inline static float getRandom(float start,float end){
+            return getRandom0to1()*(end-start)+start;
+            }
         inline Vector3 normalize()const{
             return Vector3(*this/length());
         }
+        inline static Vector3 random(){
+            return Vector3((float)getRandom0to1(),
+                (float)getRandom0to1(),(float)getRandom0to1());
+        }
 
+        inline static Vector3 random(float start,float end){
+            return Vector3((float)getRandom0to1()*(end-start)+start,
+                (float)getRandom0to1()*(end-start)+start,
+                (float)getRandom0to1()*(end-start)+start);
+        }
     private:
         std::vector<float> e;//{0.0f,0.0f,0.0f};
     };

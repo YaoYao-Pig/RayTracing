@@ -18,3 +18,10 @@ yyz::Vector3 yyz::randomInUnitSphere()
         } while (p.dot(p) >= 1.0);
         return p;
 }
+yyz::Vector3 yyz::randomInUnitDisk() {
+        while (true) {
+            auto p = Vector3(getRandom0to1()*2.0-1.0, getRandom0to1()*2.0-1.0, 0);
+            if (p.squaredLength() >= 1) continue;
+        return p;
+    }
+}

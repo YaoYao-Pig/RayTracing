@@ -12,6 +12,5 @@
 #define RANDOM_N  9999
 
 
-
 #endif
 
