@@ -113,7 +113,7 @@ vector<Hitable*> randomScene(){
 int main(){
     int nx=1200;
     int ny=600;
-    int ns=1;//抗锯齿采样次数
+    int ns=200;//抗锯齿采样次数
     srand(time(NULL));
 
 
